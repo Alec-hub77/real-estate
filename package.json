@@ -1,0 +1,27 @@
+{
+  "name": "game-landing",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanem/react-nprogress": "^5.0.0",
+    "axios": "^0.26.1",
+    "framer-motion": "^6.3.0",
+    "millify": "^4.0.0",
+    "query-string": "^7.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-horizontal-scrolling-menu": "^2.7.1",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.3.0",
+    "sass": "^1.49.10"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.9.0"
+  }
+}
