@@ -8,11 +8,15 @@ import { Routes, Route } from 'react-router-dom';
 const PropertyPage = lazy(() => import('./pages/propertyPage/PropertyPage'))
 const MainPage = lazy(() => import('./pages/main/MainPage'))
 
+import Layout from './components/layout/Layout';
+
 
 function App() {
   
   return (
     <Suspense fallback={<center>Loading...</center>}>
+    <Layout>
+
     <div className="app">
         <Routes>
         <Route index element={<MainPage />} />
@@ -20,6 +24,7 @@ function App() {
         <Route path='*' element={<Error404/>} />
       </Routes>
     </div>
+    </Layout>
     </Suspense>
   );
 }
