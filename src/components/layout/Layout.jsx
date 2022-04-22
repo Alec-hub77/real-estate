@@ -1,18 +1,15 @@
 import React from 'react'
+import Navbar from '../navbar/Navbar'
+import Footer from '../footer/Footer'
 
 const Layout = ({children}) => {
   return (
     <div className="layout">
-        <div >
-            <h1>Here is Navbar</h1>
-        </div>
+       <Navbar />
         <main>
         {children}
-
         </main>
-        <footer >
-            here is footer
-        </footer>
+        <Footer />
     </div>
   )
 }

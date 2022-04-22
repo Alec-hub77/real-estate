@@ -1,0 +1,52 @@
+@use '../../scss/_variables' as *;
+
+.navbar {
+  padding: 15px;
+  border-bottom: 2px solid $color-gray-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 20px;
+
+  &__logo {
+    font-size: 24px;
+    color: $color-blue;
+    font-weight: 900;
+  }
+
+  &__menu {
+    &-wrapper {
+      position: relative;
+    }
+
+    &-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    &-items {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 200px;
+      background-color: #fff;
+      box-shadow: $box-shadow;
+      padding: 10px;
+    }
+
+    &-item {
+      padding: 10px 0;
+
+      * ~ * {
+        margin-left: 10px;
+        padding: 10px;
+      }
+
+      &:hover {
+        background-color: $color-gray-light;
+      }
+    }
+  }
+}

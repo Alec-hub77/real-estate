@@ -1,3 +1,5 @@
 export { default as Banner } from './banner/Banner'
 export { default as Property } from './property/Property'
 export { default as Layout } from './layout/Layout'
+export { default as Navbar } from './navbar/Navbar'
+export { default as Footer } from './footer/Footer'

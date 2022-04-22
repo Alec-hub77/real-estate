@@ -1,11 +1,17 @@
+@use '../../scss/_variables' as *;
+
 .property {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
   &__container {
     width: 420px;
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    box-shadow: 0px 0px 15px -10px #000000;
+    box-shadow: $box-shadow;
   }
 
   &__img {
@@ -57,6 +63,7 @@
       align-items: center;
       justify-content: space-between;
       width: 250px;
+      color: $color-blue;
     }
 
     &-title {

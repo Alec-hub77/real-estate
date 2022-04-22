@@ -3,7 +3,8 @@
 .banner {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 
     &__img {
         width: 500px;

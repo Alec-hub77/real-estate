@@ -22,7 +22,6 @@ const Property = (props) => {
     isVerified,
   } = props;
 
-  console.log(agency);
 
   return (
     <Link to={`property/${externalID}`}>
@@ -47,7 +46,7 @@ const Property = (props) => {
             {rooms}
             <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
           </div>
-          <div className="property__info-title">
+          <div className="property__info-title" title={title}>
             {title.length > 30 ? title.substring(0, 30) + '...' : title}
           </div>
         </div>
