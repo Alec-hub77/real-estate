@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 
 const PropertyPage = lazy(() => import('./pages/propertyPage/PropertyPage'))
 const MainPage = lazy(() => import('./pages/main/MainPage'))
+const Search = lazy(() => import('./pages/search/Search'))
 
 import Layout from './components/layout/Layout';
 
@@ -22,6 +23,7 @@ function App() {
         <Route index element={<MainPage />} />
         <Route path="property/:id" element={<PropertyPage/>} />
         <Route path='*' element={<Error404/>} />
+        <Route path='search' element={<Search/>} />
       </Routes>
     </div>
     </Layout>

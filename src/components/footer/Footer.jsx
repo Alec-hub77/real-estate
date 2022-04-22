@@ -2,7 +2,9 @@ import './footer.scss'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <center className="footer">
+      2022, Realtor Inc
+    </center>
   )
 }
 

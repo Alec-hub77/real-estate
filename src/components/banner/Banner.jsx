@@ -17,9 +17,7 @@ const Banner = (props) => {
         </div>
         <div className="banner__desc">{desc}</div>
         <div className="banner__btn">
-          <button>
-            <Link to={linkName}>{buttonText}</Link>
-          </button>
+            <Link to={linkName}><button>{buttonText}</button></Link>
         </div>
       </div>
     </div>

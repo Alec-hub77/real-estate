@@ -1,0 +1,30 @@
+@use '../../scss/_variables' as *;
+
+.search {
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-gray-light;
+        border-bottom: 1px solid $color-gray;
+        padding: 10px;
+        font-weight: 900;
+        cursor: pointer;
+        margin-top: -22px;
+        margin-bottom: 20px;
+
+        &-title {
+            margin-right: 5px;
+        }
+    }
+
+    &__filter {
+        margin-bottom: 20px;
+    }
+
+    &__result {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

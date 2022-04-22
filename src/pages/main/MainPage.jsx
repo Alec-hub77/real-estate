@@ -47,7 +47,7 @@ const MainPage = () => {
         buttonText="Explore Renting"
       />
       {loading ? (
-        <div>Loading...</div>
+        <center>Loading...</center>
       ) : (
         <div className="property">
           {propertyForRent.map((property) => (
@@ -66,7 +66,7 @@ const MainPage = () => {
         buttonText="Explore Buying"
       />
       {loading ? (
-        <div>Loading...</div>
+        <center>Loading...</center>
       ) : (
         <div className="property">
           {propertyForSale.map((property) => (
