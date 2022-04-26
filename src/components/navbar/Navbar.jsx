@@ -52,11 +52,11 @@ const Navbar = () => {
 
 
   return (
-    <div className="navbar">
-      <div className="navbar__logo">
+    <div className="navbar" >
+      <div className="navbar__logo" >
         <Link to="/">Realtor</Link>
       </div>
-      <div className="navbar__menu-wrapper"  ref={modalRef}>
+      <div className="navbar__menu-wrapper" ref={modalRef} >
         <div className="navbar__menu-icon" onClick={e => setActiveDropDown(!activeDropDown)} >
           <FcMenu  />
         </div>

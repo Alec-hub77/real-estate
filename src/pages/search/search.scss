@@ -12,11 +12,15 @@
         font-weight: 900;
         cursor: pointer;
         margin-top: -22px;
-        margin-bottom: 20px;
+        
 
         &-title {
             margin-right: 5px;
         }
+    }
+
+    &__purpose {
+        text-transform: capitalize;
     }
 
     &__filter {

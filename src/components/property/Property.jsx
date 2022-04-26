@@ -27,7 +27,7 @@ const Property = (props) => {
     <Link to={`property/${externalID}`}>
       <div className="property__container">
         <div className="property__img">
-          <img src={coverPhoto.url ? coverPhoto.url : defaultImg} alt="" />
+          <img src={coverPhoto?.url ? coverPhoto?.url : defaultImg} alt="" />
         </div>
         <div className="property__info">
           <div className="property__info-price">

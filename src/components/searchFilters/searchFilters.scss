@@ -1,0 +1,11 @@
+@use '../../scss/_variables' as *;
+
+
+.filters {
+    flex-wrap: wrap;
+    background-color: $color-gray-light;
+
+    select {
+        padding: 5px;
+    }
+}

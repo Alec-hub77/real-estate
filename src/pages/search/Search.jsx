@@ -1,22 +1,24 @@
-import { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './search.scss';
-
-import { Property } from '../../components'
-
-import { fetchApi } from '../../utils/fetchApi';
 
 import { SearchFilters } from '../../components';
 
 import { BsFilter } from 'react-icons/bs';
 
-const Search = () => {
+import queryString from 'query-string'
+import SearchData from '../../components/searchData/SearchData';
+
+import { filterData, getFilterValues } from '../../utils/filterData'
+
+
+
+
+
+const Search = React.memo(() => {
   const [searchFilter, setSearchFilter] = useState(false);
-  const [data, setData] = useState([]);
-
-  const purpose = window.location.search.split('=')[1];
-
+  const [purp, setPurp] = useState(null);
+  const [filters, setFilters] = useState(filterData);
   const [searchParams, setSearchParams] = useState({
-    purpose: 'for-rent',
     rentFrequency: 'yearly',
     minPrice: '0',
     maxPrice: '1000000',
@@ -27,26 +29,18 @@ const Search = () => {
     locationExternalIDs: '5002',
     categoryExternalID: '4',
   });
-
   
-
-  const getData = async (searchParams) => {
-
-    try {
-        const responce = await fetchApi(`/properties/list?locationExternalIDs=${searchParams.locationExternalIDs}&purpose=${purpose}&categoryExternalID=${searchParams.categoryExternalID}&bathsMin=${searchParams.bathsMin}&rentFrequency=${searchParams.rentFrequency}&priceMin=${searchParams.minPrice}&priceMax=${searchParams.maxPrice}&roomsMin=${searchParams.roomsMin}&sort=${searchParams.sort}&areaMax=${searchParams.areaMax}`)
-        setData(responce?.hits)
-    } catch (error) {
-        console.log(error)
-    }
-
-  };
   
-  useEffect(() => {
-    getData(searchParams)
-  }, [searchParams])
+  
+  
+  const {purpose} = queryString.parse(window.location.search)
+    console.log(purpose)
 
-  console.log(data)
-  console.log('render')
+    useEffect(() => {
+      const {purpose} = queryString.parse(window.location.search)
+      setPurp(purpose)
+    }, [purpose])
+    
 
 
   return (
@@ -61,16 +55,25 @@ const Search = () => {
         </div>
       </div>
       <div className="search__filter">
-        {searchFilter && <SearchFilters />}
+        {searchFilter && <SearchFilters 
+        filters={filters}
+        searchParams={searchParams}
+        setSearchParams={setSearchParams} 
+        setPurp={setPurp}
+        />}
+      </div>
+      <div className="search__purpose">
+          <h1>Property for {purp}</h1>
       </div>
       <div className="search__result">
-        {data?.map(item => <Property {...item} key={item.id}/>)}
+        <SearchData purpose={purp} searchParams={searchParams}/>
+        {/* {data?.map(item => <Property {...item} key={item.id}/>)} */}
       </div>
     </div>
   );
-};
+});
 
-export default memo(Search);
+export default Search;
 
 // const purpose = query.purpose || 'for-rent';
 //   const rentFrequency = query.rentFrequency || 'yearly';
